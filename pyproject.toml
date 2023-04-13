@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "tg-bot"
+version = "0.1.0"
+description = "Project to manage telegram bot"
+authors = ["Dmitry Russkin"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "tg_bot"}]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.12"
+pytest-cov = "^4.0.0"
+requests = "^2.28.2"
+pony = "^0.7.16"
+pyside6 = "^6.2.0"
+pytest-qt = "^4.2.0"
+pytest-env = "^0.8.1"
+pyTelegramBotAPI = "^4.10.0"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.2.0"
+mypy = "^0.991"
+pylint = "^2.15.10"
+flake8 = "^6.0.0"
+mccabe = "^0.7.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

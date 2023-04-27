@@ -75,6 +75,7 @@ class SQLiteRepository(AbstractRepository[T]):
             for db_obj in db_obj_lst:
                 obj_lst.append(self.data_type(**db_obj.get_data()))
             return obj_lst
+        
         # return objects accroding to condition
         attr1, value1 = list(where.items())[0]
         db_obj_lst = orm.select(p for p in self.table_type

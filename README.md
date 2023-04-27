@@ -33,7 +33,6 @@ poetry install
 Для запуска тестов и статических анализаторов используйте следующие команды (убедитесь, 
 что вы находитесь в корневой папке проекта):
 ```commandline
-poetry run pytest --cov
 poetry run mypy --strict tg_bot
 poetry run pylint tg_bot
 poetry run flake8 tg_bot

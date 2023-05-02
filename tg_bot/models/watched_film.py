@@ -13,6 +13,8 @@ class WatchedFilm:
 
     title: str
     release_year: int
+    url: str
     rate: int
     comment: str
+    username: str
     pk: int = 0

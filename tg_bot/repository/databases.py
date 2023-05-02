@@ -22,45 +22,40 @@ def convert_from_py2sqlite(data):
     else:
         return data
 
-class User(db.Entity):
-    pk = orm.PrimaryKey(int, auto=True)
-    username = orm.Required(str, 30)
-    desired_film_list = orm.Required(str, 100)
-    watched_film_list = orm.Required(str, 100)
-
-    def get_data(self):
-        return {
-            'pk': convert_from_py2sqlite(self.pk),
-            'username': self.username,
-            'film_lists': self.film_lists
-        }
-
 class DesiredFilm(db.Entity):
     pk = orm.PrimaryKey(int, auto=True)
     title = orm.Required(str, 100)
     release_year = orm.Required(int)
+    url = orm.Optional(str)
     priority = orm.Required(int)
+    username = orm.Required(str, 100)
 
     def get_data(self):
         return {
             'pk': convert_from_py2sqlite(self.pk),
             'title': self.title,
             'release_year': self.release_year,
-            'priority': self.priority
+            'url': self.url,
+            'priority': self.priority,
+            'username': self.username
         }
 
 class WatchedFilm(db.Entity):
     pk = orm.PrimaryKey(int, auto=True)
     title = orm.Required(str, 100)
     release_year = orm.Required(int)
+    url = orm.Optional(str)
     rate = orm.Required(int)
     comment = orm.Optional(str, 500)
+    username = orm.Required(str, 100)
 
     def get_data(self):
         return {
             'pk': convert_from_py2sqlite(self.pk),
             'title': self.title,
             'release_year': self.release_year,
+            'url': self.url,
             'rate': self.rate,
-            'comment': self.comment
+            'comment': self.comment,
+            'username': self.username
         }

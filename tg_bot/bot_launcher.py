@@ -20,7 +20,6 @@ import lxml
 API_token = '6093284104:AAEaVsWdq-0UmuKA2myzfI_reVCc41kAEJM'
 kinopoisk_search_url = 'https://www.kinopoisk.ru/index.php?kp_query='
 kinopoisk_url = 'https://www.kinopoisk.ru'
-max_page = 18793
 
 bot = telebot.TeleBot(API_token)
 
